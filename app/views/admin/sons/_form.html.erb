@@ -1,0 +1,25 @@
+<%= form_for(@admin_son) do |f| %>
+  <% if @admin_son.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_son.errors.count, "error") %> prohibited this admin_son from being saved:</h2>
+
+      <ul>
+      <% @admin_son.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :admin_father_id %><br>
+    <%= f.text_field :admin_father_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
